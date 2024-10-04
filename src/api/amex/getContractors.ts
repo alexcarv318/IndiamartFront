@@ -10,7 +10,7 @@ type AmexContractorsFilters = {
 }
 
 export async function getContractors(filters: AmexContractorsFilters | null | undefined) {
-    let url = `${apiUrl}/contractors/filter`;
+    let url = `${apiUrl}/amex/contractors/filter`;
 
     if (filters !== null && filters !== undefined) {
         url += "?" + new URLSearchParams({

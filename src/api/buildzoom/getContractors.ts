@@ -9,7 +9,7 @@ type BuildzoomContractorsFilters = {
 }
 
 export async function getContractors(filters: BuildzoomContractorsFilters | null | undefined) {
-    let url = `${apiUrl}/contractors/filter`;
+    let url = `${apiUrl}/buildzoom/contractors/filter`;
 
     if (filters !== null && filters !== undefined) {
         url += "?" + new URLSearchParams({

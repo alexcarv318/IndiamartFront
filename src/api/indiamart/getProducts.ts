@@ -13,7 +13,7 @@ type ProductsFilters = {
 }
 
 export async function getProducts(filters: ProductsFilters | null | undefined) {
-    let url = `${apiUrl}/products/filter`;
+    let url = `${apiUrl}/indiamart/products/filter`;
 
     if (filters !== null && filters !== undefined) {
         url += "?" + new URLSearchParams({

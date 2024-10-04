@@ -10,7 +10,7 @@ type NextdoorContractorsFilters = {
 }
 
 export async function getContractors(filters: NextdoorContractorsFilters | null | undefined) {
-    let url = `${apiUrl}/contractors/filter`;
+    let url = `${apiUrl}/nextdoor/contractors/filter`;
 
     if (filters !== null && filters !== undefined) {
         url += "?" + new URLSearchParams({
