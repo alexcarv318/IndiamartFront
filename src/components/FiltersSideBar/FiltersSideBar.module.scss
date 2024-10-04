@@ -1,0 +1,17 @@
+.filtersContainer {
+  height: calc(100vh - 2.5rem);
+  width: 0;
+  opacity: 0;
+
+  background: white;
+  position: absolute;
+  overflow: auto;
+  z-index: 2;
+
+  border: 1px solid #ddd;
+  border-radius: 10px 0 0 10px;
+  padding: 1.5rem;
+
+  transition: opacity 0.2s ease;
+  transition: width 0.2s ease-out;
+}

@@ -1,0 +1,10 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: calc(100vw - 4rem);
+
+  padding: 1.5rem;
+  overflow: hidden;
+}

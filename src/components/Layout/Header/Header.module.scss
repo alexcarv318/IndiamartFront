@@ -1,0 +1,15 @@
+.header {
+  height: 50px;
+  background: var(--primary);
+  color: white;
+
+  padding: 0 1.5rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.header img {
+  height: 50px;
+  cursor: pointer;
+}
