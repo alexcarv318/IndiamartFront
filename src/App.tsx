@@ -12,7 +12,6 @@ function App() {
         <Route path="/indiamart" element={<IndiamartPage />} />
         <Route path="/nextdoor" element={<NextdoorPage />} />
         <Route path="/buildzoom" element={<BuildzoomPage />} />
-        <Route path="/amex" element={<AmexPage />} />
     </Routes>
   )
 }

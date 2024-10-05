@@ -11,7 +11,6 @@ const MenuIcon = () => {
                 <MenuItem><Link to={"/indiamart"}>Indiamart</Link></MenuItem>
                 <MenuItem><Link to={"/nextdoor"}>Nextdoor</Link></MenuItem>
                 <MenuItem><Link to={"/buildzoom"}>Buildzoom</Link></MenuItem>
-                <MenuItem><Link to={"/amex"}>Amex</Link></MenuItem>
             </Menu>
         </Dropdown>
     )
