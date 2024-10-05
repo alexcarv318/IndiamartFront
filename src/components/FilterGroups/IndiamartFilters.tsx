@@ -45,14 +45,14 @@ const IndiamartFilters = (props: IndiamartFiltersProps) => {
 
     return (
         <>
-            <NumericInputFilter placeholder={"From price"} onChange={(event) => {setMinPrice(parseFloat(event.target.value))}} />
-            <NumericInputFilter placeholder={"To price"} onChange={(event) => setMaxPrice(parseFloat(event.target.value))} />
-            <InputFilter placeholder={"Name"} onChange={(event) => setName(event.target.value)} />
+            <NumericInputFilter placeholder={"From price"} onChange={(event) => {setMinPrice(parseFloat((event.target as HTMLInputElement).value))}} />
+            <NumericInputFilter placeholder={"To price"} onChange={(event) => setMaxPrice(parseFloat((event.target as HTMLInputElement).value))} />
+            <InputFilter placeholder={"Name"} onChange={(event) => setName((event.target as HTMLInputElement).value)} />
             <AutocompleteFilter placeholder={"Category"} options={categories} onChange={(event) => setCategory(event.target.value)} />
-            <InputFilter placeholder={"Company Name"}  onChange={(event) => setCompanyName(event.target.value)} />
-            <InputFilter placeholder={"Company City"}  onChange={(event) => setCompanyCity(event.target.value)} />
-            <InputFilter placeholder={"Company State"}  onChange={(event) => setCompanyState(event.target.value)} />
-            <InputFilter placeholder={"Company Country"}  onChange={(event) => setCompanyCountry(event.target.value)} />
+            <InputFilter placeholder={"Company Name"}  onChange={(event) => setCompanyName((event.target as HTMLInputElement).value)} />
+            <InputFilter placeholder={"Company City"}  onChange={(event) => setCompanyCity((event.target as HTMLInputElement).value)} />
+            <InputFilter placeholder={"Company State"}  onChange={(event) => setCompanyState((event.target as HTMLInputElement).value)} />
+            <InputFilter placeholder={"Company Country"}  onChange={(event) => setCompanyCountry((event.target as HTMLInputElement).value)} />
 
             <Button onClick={handleSubmit} variant="solid" size="md" sx={{ marginTop: 3 }}>Search</Button>
         </>
