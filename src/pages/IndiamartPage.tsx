@@ -14,7 +14,7 @@ const IndiamartPage = () => {
     }, [])
 
     return (
-        <PageLayout page={"indiamart"}>
+        <PageLayout setData={setProducts} page={"indiamart"}>
             <h1>Indiamart</h1>
             <Table arrayOfData={products}/>
         </PageLayout>

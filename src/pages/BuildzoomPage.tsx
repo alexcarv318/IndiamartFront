@@ -13,7 +13,7 @@ const BuildzoomPage = () => {
     }, [])
 
     return (
-        <PageLayout page={"buildzoom"}>
+        <PageLayout setData={setContractors} page={"buildzoom"}>
             <h1>Buildzoom</h1>
             <Table arrayOfData={contractors}/>
         </PageLayout>

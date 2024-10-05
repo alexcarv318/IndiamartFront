@@ -1,12 +1,15 @@
 import styles from "./FiltersSideBar.module.scss"
-import InputFilter from "../FilterComponents/InputFilter.tsx";
-import AutocompleteFilter from "../FilterComponents/AutocompleteFilter.tsx";
 import {Button} from "@mui/joy";
+import IndiamartFilters from "../FilterGroups/IndiamartFilters.tsx";
+import NextdoorFilters from "../FilterGroups/NextdoorFilters.tsx";
+import BuildzoomFilters from "../FilterGroups/BuildzoomFilters.tsx";
+import AmexFilters from "../FilterGroups/AmexFilters.tsx";
 
 type FiltersSideBarProps = {
     page: "amex" | "buildzoom" | "indiamart" | "nextdoor";
-    setIsFilterSidebarOpen: (isOpen: boolean) => void;
+    setData: (data: any) => void;
     isOpen: boolean;
+    setIsFilterSidebarOpen: (isOpen: boolean) => void;
 }
 
 const FiltersSideBar = (props: FiltersSideBarProps) => {
@@ -20,14 +23,10 @@ const FiltersSideBar = (props: FiltersSideBarProps) => {
                 <Button onClick={() => props.setIsFilterSidebarOpen(false)}>X</Button>
             </div>
 
-            <InputFilter
-                placeholder={"Name"}
-            />
-
-            <AutocompleteFilter
-                placeholder={"Name"}
-                options={["A", "B", "C"]}
-            />
+            {props.page === "indiamart" && (<IndiamartFilters setProducts={props.setData} />)}
+            {props.page === "nextdoor" && (<NextdoorFilters setContractors={props.setData} />)}
+            {props.page === "buildzoom" && (<BuildzoomFilters setContractors={props.setData} />)}
+            {props.page === "amex" && (<AmexFilters setContractors={props.setData} />)}
         </div>
     )
 }

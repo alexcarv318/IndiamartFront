@@ -1,7 +1,7 @@
 import {apiUrl} from "../../constants.ts";
 
-export async function getContractorsCategories() {
-    const url = `${apiUrl}/buildzoom/contractors/categories`;
+export async function getContractorsCities() {
+    const url = `${apiUrl}/buildzoom/contractors/cities`;
 
     try {
         const response = await fetch(url);
@@ -11,7 +11,7 @@ export async function getContractorsCategories() {
         }
 
         const json = await response.json();
-        return json.contractors_categories;
+        return json.contractor_cities;
     } catch (err) {
         console.error(err);
     }

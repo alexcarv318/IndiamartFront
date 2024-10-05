@@ -13,7 +13,7 @@ const AmexPage = () => {
     }, [])
 
     return (
-        <PageLayout page={"amex"}>
+        <PageLayout setData={setContractors} page={"amex"}>
             <h1>Amex</h1>
             <Table arrayOfData={contractors}/>
         </PageLayout>

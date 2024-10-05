@@ -1,12 +1,13 @@
 import {ChangeEventHandler} from "react";
 import {Input} from "@mui/joy";
+import {NumericFormat} from "react-number-format";
 
-type InputFilterProps = {
+type NumericInputFilterProps = {
     placeholder?: string
     onChange?: ChangeEventHandler | undefined
 }
 
-const InputFilter = (props: InputFilterProps) => {
+const NumericInputFilter = (props: NumericInputFilterProps) => {
     return (
         <>
             <h3>{props.placeholder}</h3>
@@ -15,9 +16,14 @@ const InputFilter = (props: InputFilterProps) => {
                 size="md"
                 variant="outlined"
                 onChange={props.onChange}
+                slotProps={{
+                    input: {
+                        component: NumericFormat,
+                    },
+                }}
             />
         </>
     )
 }
 
-export default InputFilter;
+export default NumericInputFilter;

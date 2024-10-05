@@ -6,16 +6,22 @@ import OpenFiltersButton from "../../OpenFiltersButton/OpenFiltersButton.tsx";
 
 type PageLayoutProps = {
     page: "amex" | "buildzoom" | "indiamart" | "nextdoor";
+    setData: (data: any) => void;
     children: ReactNode;
 }
 
-const PageLayout = ({ children, page }: PageLayoutProps) => {
+const PageLayout = ({ children, page, setData }: PageLayoutProps) => {
     const [isFilterSidebarOpen, setIsFilterSidebarOpen] = useState(false);
 
     return (
         <div>
             <Header/>
-            <FiltersSideBar page={page} isOpen={isFilterSidebarOpen} setIsFilterSidebarOpen={setIsFilterSidebarOpen}/>
+            <FiltersSideBar
+                page={page}
+                setData={setData}
+                isOpen={isFilterSidebarOpen}
+                setIsFilterSidebarOpen={setIsFilterSidebarOpen}
+            />
             <main className={styles.main}>
                 {children}
                 <OpenFiltersButton

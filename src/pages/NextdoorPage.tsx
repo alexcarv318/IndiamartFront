@@ -13,7 +13,7 @@ const NextdoorPage = () => {
     }, [])
 
     return (
-        <PageLayout page={"nextdoor"}>
+        <PageLayout setData={setContractors} page={"nextdoor"}>
             <h1>Nextdoor</h1>
             <Table arrayOfData={contractors}/>
         </PageLayout>
