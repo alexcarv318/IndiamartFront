@@ -15,8 +15,8 @@ export async function getContractors(filters: BuildzoomContractorsFilters | null
         url += "?" + new URLSearchParams({
             company_name: filters.companyName.toString(),
             phone: filters.phone.toString(),
-            city: filters.city.toString(),
-            state: filters.state.toString(),
+            city: filters.city ? filters.city.toString() : "",
+            state: filters.state ? filters.state.toString() : "",
             postal_code: filters.postalCode.toString(),
         })
     }

@@ -16,9 +16,9 @@ export async function getContractors(filters: AmexContractorsFilters | null | un
         url += "?" + new URLSearchParams({
             name: filters.name.toString(),
             phone: filters.phone.toString(),
-            city: filters.city.toString(),
-            state: filters.state.toString(),
-            category: filters.category.toString(),
+            city: filters.city ? filters.city.toString() : "",
+            state: filters.state ? filters.state.toString() : "",
+            category: filters.category ? filters.category.toString() : "",
             zip_code: filters.zipCode.toString(),
         })
     }

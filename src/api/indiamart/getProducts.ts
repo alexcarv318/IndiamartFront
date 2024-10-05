@@ -20,7 +20,7 @@ export async function getProducts(filters: ProductsFilters | null | undefined) {
             min_price: filters.minPrice.toString(),
             max_price: filters.maxPrice.toString(),
             name: filters.name,
-            category: filters.category,
+            category: filters.category ? filters.category : "",
             company_name: filters.companyName,
             company_city: filters.companyCity,
             company_state: filters.companyState,

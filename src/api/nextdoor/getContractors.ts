@@ -16,10 +16,10 @@ export async function getContractors(filters: NextdoorContractorsFilters | null 
         url += "?" + new URLSearchParams({
             name: filters.name.toString(),
             phone: filters.phone.toString(),
-            city: filters.city.toString(),
-            state: filters.state.toString(),
+            city: filters.city ? filters.city.toString() : "",
+            state: filters.state ? filters.state.toString() : "",
             zip_code: filters.zip_code.toString(),
-            category: filters.category.toString(),
+            category: filters.category ? filters.category.toString() : "",
         })
     }
 
