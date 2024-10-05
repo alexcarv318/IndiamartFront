@@ -48,7 +48,7 @@ const IndiamartFilters = (props: IndiamartFiltersProps) => {
             <NumericInputFilter placeholder={"From price"} onChange={(event) => {setMinPrice(parseFloat((event.target as HTMLInputElement).value))}} />
             <NumericInputFilter placeholder={"To price"} onChange={(event) => setMaxPrice(parseFloat((event.target as HTMLInputElement).value))} />
             <InputFilter placeholder={"Name"} onChange={(event) => setName((event.target as HTMLInputElement).value)} />
-            <AutocompleteFilter placeholder={"Category"} options={categories} onChange={(event) => setCategory(event.target.value)} />
+            <AutocompleteFilter placeholder={"Category"} options={categories} onChange={(value) => setCategory(value)} />
             <InputFilter placeholder={"Company Name"}  onChange={(event) => setCompanyName((event.target as HTMLInputElement).value)} />
             <InputFilter placeholder={"Company City"}  onChange={(event) => setCompanyCity((event.target as HTMLInputElement).value)} />
             <InputFilter placeholder={"Company State"}  onChange={(event) => setCompanyState((event.target as HTMLInputElement).value)} />

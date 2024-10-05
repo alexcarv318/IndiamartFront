@@ -46,8 +46,8 @@ const BuildzoomFilters = (props: BuildzoomFiltersProps) => {
         <>
             <InputFilter placeholder={"Company Name"} onChange={(event) => {setCompanyName((event.target as HTMLInputElement).value)}} />
             <InputFilter placeholder={"Phone"} onChange={(event) => {setPhone((event.target as HTMLInputElement).value)}} />
-            <AutocompleteFilter placeholder={"City"} options={cities} onChange={(event) => {setCity(event.target.value)}} />
-            <AutocompleteFilter placeholder={"State"} options={states} onChange={(event) => {setState(event.target.value)}} />
+            <AutocompleteFilter placeholder={"City"} options={cities} onChange={(value) => {setCity(value)}} />
+            <AutocompleteFilter placeholder={"State"} options={states} onChange={(value) => {setState(value)}} />
             <InputFilter placeholder={"Postal code"} onChange={(event) => {setPostalCode((event.target as HTMLInputElement).value)}} />
 
             <Button onClick={handleSubmit} variant="solid" size="md" sx={{ marginTop: 3 }}>Search</Button>

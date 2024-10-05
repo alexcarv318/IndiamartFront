@@ -53,10 +53,10 @@ const NextdoorFilters = (props: NextdoorFiltersProps) => {
         <>
             <InputFilter placeholder={"Name"} onChange={(event) => {setName((event.target as HTMLInputElement).value)}} />
             <InputFilter placeholder={"Phone"} onChange={(event) => {setPhone((event.target as HTMLInputElement).value)}} />
-            <AutocompleteFilter placeholder={"City"} options={cities} onChange={(event) => {setCity(event.target.value)}} />
-            <AutocompleteFilter placeholder={"State"} options={states} onChange={(event) => {setState(event.target.value)}} />
+            <AutocompleteFilter placeholder={"City"} options={cities} onChange={(value) => {setCity(value)}} />
+            <AutocompleteFilter placeholder={"State"} options={states} onChange={(value) => {setState(value)}} />
             <InputFilter placeholder={"Zip code"} onChange={(event) => {setZipCode((event.target as HTMLInputElement).value)}} />
-            <AutocompleteFilter placeholder={"Category"} options={categories} onChange={(event) => {setCategory(event.target.value)}} />
+            <AutocompleteFilter placeholder={"Category"} options={categories} onChange={(value) => {setCategory(value)}} />
 
             <Button onClick={handleSubmit} variant="solid" size="md" sx={{ marginTop: 3 }}>Search</Button>
         </>
