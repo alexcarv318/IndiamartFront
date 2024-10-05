@@ -15,7 +15,7 @@ const PageLayout = ({ children, page }: PageLayoutProps) => {
     return (
         <div>
             <Header/>
-            <FiltersSideBar page={page} isOpen={isFilterSidebarOpen}/>
+            <FiltersSideBar page={page} isOpen={isFilterSidebarOpen} setIsFilterSidebarOpen={setIsFilterSidebarOpen}/>
             <main className={styles.main}>
                 {children}
                 <OpenFiltersButton

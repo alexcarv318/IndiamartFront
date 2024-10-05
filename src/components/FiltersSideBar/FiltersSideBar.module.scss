@@ -15,3 +15,9 @@
   transition: opacity 0.2s ease;
   transition: width 0.2s ease-out;
 }
+
+.closeSidebarContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
