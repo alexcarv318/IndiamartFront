@@ -18,7 +18,11 @@ const Table = (props: TableProps) => {
                     {Object.keys(data).map((key: string, index: number) => (
                         <td className={styles.tableCell} key={"Row cell: " + key + index}>
                             <div className={styles.tableCellContent}>
-                                {data[key]}
+                                {(key.toLowerCase().includes("url") || key.toLowerCase().includes("link")) ?
+                                    <a href={data[key]}>{data[key]}</a>
+                                :
+                                    data[key]
+                                }
                             </div>
                         </td>
                     ))}

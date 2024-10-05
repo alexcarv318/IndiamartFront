@@ -13,7 +13,7 @@ const AutocompleteFilter = (props: AutocompleteProps) => {
             <Autocomplete
                 placeholder={props.placeholder}
                 options={props.options}
-                disabled={props.options === undefined && props.options === null}
+                disabled={props.options === undefined || props.options === null || props.options.length === 0}
                 size="md"
                 onChange={props.onChange}
             />

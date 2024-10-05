@@ -20,13 +20,13 @@ const NextdoorFilters = (props: NextdoorFiltersProps) => {
     const [category, setCategory] = useState('');
 
     //autocomplete values
-    const [cities, setCitites] = useState([]);
+    const [cities, setCities] = useState([]);
     const [states, setStates] = useState([]);
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
         getContractorsCities().then((res) => {
-            setCitites(res);
+            setCities(res);
         })
         getContractorsStates().then((res) => {
             setStates(res);
