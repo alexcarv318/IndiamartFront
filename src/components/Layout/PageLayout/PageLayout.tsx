@@ -1,17 +1,17 @@
-import {ReactNode, useState} from "react";
+import {ReactNode} from "react";
 import Header from "../Header/Header.tsx";
 import styles from "./PageLayout.module.scss";
 import FiltersSideBar from "../../FiltersSideBar/FiltersSideBar.tsx";
-import OpenFiltersButton from "../../OpenFiltersButton/OpenFiltersButton.tsx";
 
 type PageLayoutProps = {
     page: "amex" | "buildzoom" | "indiamart" | "nextdoor";
+    isFilterSidebarOpen: boolean;
+    setIsFilterSidebarOpen: (isOpen: boolean) => void;
     setData: (data: any) => void;
     children: ReactNode;
 }
 
-const PageLayout = ({ children, page, setData }: PageLayoutProps) => {
-    const [isFilterSidebarOpen, setIsFilterSidebarOpen] = useState(false);
+const PageLayout = ({ children, page, setData, isFilterSidebarOpen, setIsFilterSidebarOpen }: PageLayoutProps) => {
 
     return (
         <div>
@@ -24,11 +24,6 @@ const PageLayout = ({ children, page, setData }: PageLayoutProps) => {
             />
             <main className={styles.main}>
                 {children}
-                <OpenFiltersButton
-                    onClick={() => {
-                        setIsFilterSidebarOpen(!isFilterSidebarOpen)
-                    }}
-                />
             </main>
         </div>
     )
