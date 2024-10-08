@@ -16,7 +16,7 @@ const NextdoorPage = () => {
 
     return (
         <PageLayout setData={setContractors} page={"nextdoor"} isFilterSidebarOpen={isFilterSidebarOpen} setIsFilterSidebarOpen={setIsFilterSidebarOpen}>
-            <div>
+            <div style={{display: "flex", justifyContent: "space-between"}}>
                 <h1>Nextdoor</h1>
                 <OpenFiltersButton
                     onClick={() => setIsFilterSidebarOpen(!isFilterSidebarOpen)}

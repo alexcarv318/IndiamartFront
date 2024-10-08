@@ -16,7 +16,7 @@ const BuildzoomPage = () => {
 
     return (
         <PageLayout setData={setContractors} page={"buildzoom"} isFilterSidebarOpen={isFilterSidebarOpen} setIsFilterSidebarOpen={setIsFilterSidebarOpen}>
-            <div>
+            <div style={{display: "flex", justifyContent: "space-between"}}>
                 <h1>Buildzoom</h1>
                 <OpenFiltersButton
                     onClick={() => setIsFilterSidebarOpen(!isFilterSidebarOpen)}

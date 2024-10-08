@@ -16,7 +16,7 @@ const AmexPage = () => {
 
     return (
         <PageLayout setData={setContractors} page={"amex"} isFilterSidebarOpen={isFilterSidebarOpen} setIsFilterSidebarOpen={setIsFilterSidebarOpen}>
-            <div>
+            <div style={{display: "flex", justifyContent: "space-between"}}>
                 <h1>Amex</h1>
                 <OpenFiltersButton
                     onClick={() => setIsFilterSidebarOpen(!isFilterSidebarOpen)}
