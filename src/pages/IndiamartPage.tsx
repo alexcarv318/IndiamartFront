@@ -1,8 +1,9 @@
 import PageLayout from "../components/Layout/PageLayout/PageLayout.tsx";
 import Table from "../components/Table/Table.tsx";
 import {useEffect, useState} from "react";
-import {getProducts} from "../api/indiamart/getProducts.ts";
 import OpenFiltersButton from "../components/OpenFiltersButton/OpenFiltersButton.tsx";
+import {getInitialProducts} from "../api/indiamart/getInitialProducts.ts";
+import {getInitialRows} from "../api/indiamart/getInitialRows.ts";
 
 const IndiamartPage = () => {
     const [products, setProducts] = useState<any[]>([]);
@@ -10,10 +11,11 @@ const IndiamartPage = () => {
     const [isFilterSidebarOpen, setIsFilterSidebarOpen] = useState(false);
 
     useEffect(() => {
-        getProducts(null).then((res) => {
+        getInitialProducts().then((res) => {
             setProducts(res.products);
+        })
+        getInitialRows().then((res) => {
             setRowsAffected(res.rows_affected);
-            console.log(res)
         })
     }, [])
 
