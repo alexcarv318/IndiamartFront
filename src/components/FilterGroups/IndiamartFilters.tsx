@@ -45,10 +45,18 @@ const IndiamartFilters = (props: IndiamartFiltersProps) => {
         })
     }
 
+    function handleNumericInputChange(value: any, setValue: (value: any) => void) {
+        if (Number.isNaN(value)) {
+            return setValue(0);
+        } else {
+            return setValue(parseFloat(value));
+        }
+    }
+
     return (
         <>
-            <NumericInputFilter placeholder={"From price"} onChange={(event) => {setMinPrice(parseFloat((event.target as HTMLInputElement).value))}} />
-            <NumericInputFilter placeholder={"To price"} onChange={(event) => setMaxPrice(parseFloat((event.target as HTMLInputElement).value))} />
+            <NumericInputFilter placeholder={"From price"} onChange={(event) => {handleNumericInputChange((event.target as HTMLInputElement).value, setMinPrice)}} />
+            <NumericInputFilter placeholder={"To price"} onChange={(event) => {handleNumericInputChange((event.target as HTMLInputElement).value, setMaxPrice)}} />
             <InputFilter placeholder={"Name"} onChange={(event) => setName((event.target as HTMLInputElement).value)} />
             <AutocompleteFilter placeholder={"Category"} options={categories} onChange={(value) => setCategory(value)} />
             <InputFilter placeholder={"Company Name"}  onChange={(event) => setCompanyName((event.target as HTMLInputElement).value)} />
