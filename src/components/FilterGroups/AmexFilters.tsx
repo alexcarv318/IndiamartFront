@@ -9,6 +9,7 @@ import {Button} from "@mui/joy";
 
 type AmexFiltersProps = {
     setContractors: (contractors: any) => void;
+    setRowsAffected: (rowsAffected: any) => void;
 }
 
 const AmexFilters = (props: AmexFiltersProps) => {
@@ -45,7 +46,8 @@ const AmexFilters = (props: AmexFiltersProps) => {
             zipCode: zipCode,
             category: category,
         }).then((res) => {
-            props.setContractors(res)
+            props.setContractors(res.contractors);
+            props.setRowsAffected(res.rowsAffected);
         })
     }
 

@@ -9,6 +9,7 @@ import {Button} from "@mui/joy";
 
 type NextdoorFiltersProps = {
     setContractors: (contractors: any) => void;
+    setRowsAffected: (rowsAffected: number) => void;
 }
 
 const NextdoorFilters = (props: NextdoorFiltersProps) => {
@@ -45,7 +46,8 @@ const NextdoorFilters = (props: NextdoorFiltersProps) => {
             zip_code: zipCode,
             category: category,
         }).then((res) => {
-            props.setContractors(res)
+            props.setContractors(res.contractors);
+            props.setRowsAffected(res.rows_affected);
         })
     }
 

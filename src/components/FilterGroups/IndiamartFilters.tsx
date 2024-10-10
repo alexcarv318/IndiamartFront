@@ -8,6 +8,7 @@ import NumericInputFilter from "../FilterComponents/NumericInputFilter.tsx";
 
 type IndiamartFiltersProps = {
     setProducts: (products: any) => void;
+    setRowsAffected: (rowsAffected: any) => void;
 }
 
 const IndiamartFilters = (props: IndiamartFiltersProps) => {
@@ -39,7 +40,8 @@ const IndiamartFilters = (props: IndiamartFiltersProps) => {
             companyCountry: companyCountry,
             limit: 50,
         }).then((res) => {
-            props.setProducts(res)
+            props.setProducts(res.products);
+            props.setRowsAffected(res.rows_affected);
         })
     }
 
@@ -59,4 +61,4 @@ const IndiamartFilters = (props: IndiamartFiltersProps) => {
     )
 }
 
-export default IndiamartFilters
+export default IndiamartFilters;

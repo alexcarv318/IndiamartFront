@@ -8,6 +8,7 @@ import {Button} from "@mui/joy";
 
 type BuildzoomFiltersProps = {
     setContractors: (contractors: any) => void;
+    setRowsAffected: (rowsAffected: number) => void;
 }
 
 const BuildzoomFilters = (props: BuildzoomFiltersProps) => {
@@ -38,7 +39,8 @@ const BuildzoomFilters = (props: BuildzoomFiltersProps) => {
             state: state,
             postalCode: postalCode,
         }).then((res) => {
-            props.setContractors(res)
+            props.setContractors(res.contractors);
+            props.setRowsAffected(res.rowsAffected);
         })
     }
 

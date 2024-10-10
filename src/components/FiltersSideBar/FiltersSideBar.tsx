@@ -7,8 +7,9 @@ import AmexFilters from "../FilterGroups/AmexFilters.tsx";
 
 type FiltersSideBarProps = {
     page: "amex" | "buildzoom" | "indiamart" | "nextdoor";
-    setData: (data: any) => void;
     isOpen: boolean;
+    setData: (data: any) => void;
+    setRowsAffected: (rowsAffected: number) => void;
     setIsFilterSidebarOpen: (isOpen: boolean) => void;
 }
 
@@ -23,10 +24,14 @@ const FiltersSideBar = (props: FiltersSideBarProps) => {
                 <Button onClick={() => props.setIsFilterSidebarOpen(false)}>X</Button>
             </div>
 
-            {props.page === "indiamart" && (<IndiamartFilters setProducts={props.setData} />)}
-            {props.page === "nextdoor" && (<NextdoorFilters setContractors={props.setData} />)}
-            {props.page === "buildzoom" && (<BuildzoomFilters setContractors={props.setData} />)}
-            {props.page === "amex" && (<AmexFilters setContractors={props.setData} />)}
+            {props.page === "indiamart" &&
+                (<IndiamartFilters setRowsAffected={props.setRowsAffected} setProducts={props.setData} />)}
+            {props.page === "nextdoor" &&
+                (<NextdoorFilters setRowsAffected={props.setRowsAffected} setContractors={props.setData} />)}
+            {props.page === "buildzoom" &&
+                (<BuildzoomFilters setRowsAffected={props.setRowsAffected} setContractors={props.setData} />)}
+            {props.page === "amex" &&
+                (<AmexFilters setRowsAffected={props.setRowsAffected} setContractors={props.setData} />)}
         </div>
     )
 }

@@ -29,8 +29,7 @@ export async function getContractors(filters: AmexContractorsFilters | null | un
             throw new Error(`Response status: ${response.status}`);
         }
 
-        const json = await response.json();
-        return json.contractors;
+        return await response.json();
     } catch (err) {
         console.error(err);
     }

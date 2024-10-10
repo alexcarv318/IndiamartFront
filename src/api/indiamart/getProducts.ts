@@ -35,8 +35,7 @@ export async function getProducts(filters: ProductsFilters | null | undefined) {
             throw new Error(`Response status: ${response.status}`);
         }
 
-        const json = await response.json();
-        return json.products;
+        return await response.json();
     } catch (err) {
         console.error(err);
     }

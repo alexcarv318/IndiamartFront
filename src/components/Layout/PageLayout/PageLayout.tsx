@@ -8,10 +8,11 @@ type PageLayoutProps = {
     isFilterSidebarOpen: boolean;
     setIsFilterSidebarOpen: (isOpen: boolean) => void;
     setData: (data: any) => void;
+    setRowsAffected: (rowsAffected: number) => void;
     children: ReactNode;
 }
 
-const PageLayout = ({ children, page, setData, isFilterSidebarOpen, setIsFilterSidebarOpen }: PageLayoutProps) => {
+const PageLayout = ({ children, page, setData, isFilterSidebarOpen, setIsFilterSidebarOpen, setRowsAffected }: PageLayoutProps) => {
 
     return (
         <div>
@@ -20,6 +21,7 @@ const PageLayout = ({ children, page, setData, isFilterSidebarOpen, setIsFilterS
                 page={page}
                 setData={setData}
                 isOpen={isFilterSidebarOpen}
+                setRowsAffected={setRowsAffected}
                 setIsFilterSidebarOpen={setIsFilterSidebarOpen}
             />
             <main className={styles.main}>
