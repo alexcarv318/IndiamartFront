@@ -40,7 +40,7 @@ const BuildzoomFilters = (props: BuildzoomFiltersProps) => {
             postalCode: postalCode,
         }).then((res) => {
             props.setContractors(res.contractors);
-            props.setRowsAffected(res.rowsAffected);
+            props.setRowsAffected(res.rows_affected);
         })
     }
 

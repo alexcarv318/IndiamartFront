@@ -11,7 +11,7 @@ export async function getContractorsCities() {
         }
 
         const json = await response.json();
-        return json.contractors_cities;
+        return json.contractor_cities;
     } catch (err) {
         console.error(err);
     }

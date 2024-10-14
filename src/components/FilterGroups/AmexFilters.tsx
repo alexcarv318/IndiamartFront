@@ -47,17 +47,18 @@ const AmexFilters = (props: AmexFiltersProps) => {
             category: category,
         }).then((res) => {
             props.setContractors(res.contractors);
-            props.setRowsAffected(res.rowsAffected);
+            props.setRowsAffected(res.rows_affected);
         })
     }
 
     return (
         <>
-            <InputFilter placeholder={"Comapny Name"} onChange={(event) => {setCompanyName((event.target as HTMLInputElement).value)}} />
+            <InputFilter placeholder={"Company Name"} onChange={(event) => {setCompanyName((event.target as HTMLInputElement).value)}} />
             <InputFilter placeholder={"Phone"} onChange={(event) => {setPhone((event.target as HTMLInputElement).value)}} />
+            <InputFilter placeholder={"Zip code"} onChange={(event) => {setZipCode((event.target as HTMLInputElement).value)}} />
+
             <AutocompleteFilter placeholder={"City"} options={cities} onChange={(value) => {setCity(value)}} />
             <AutocompleteFilter placeholder={"State"} options={states} onChange={(value) => {setState(value)}} />
-            <InputFilter placeholder={"Zip code"} onChange={(event) => {setZipCode((event.target as HTMLInputElement).value)}} />
             <AutocompleteFilter placeholder={"Category"} options={categories} onChange={(value) => {setCategory(value)}} />
 
             <Button onClick={handleSubmit} variant="solid" size="md" sx={{ marginTop: 3 }}>Search</Button>
